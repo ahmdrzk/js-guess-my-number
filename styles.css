@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: aliceblue;
+  font-family: "VT323", monospace;
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+h1 {
+  font-weight: bolder;
+  letter-spacing: 0.12rem;
+}
+
+h2 {
+  margin-bottom: 2rem;
+  padding-block: 0.5rem;
+  background-color: brown;
+  color: white;
+  font-weight: bolder;
+  letter-spacing: 0.12rem;
+}
+
+h3 {
+  margin-bottom: 1.4rem;
+  text-align: center;
+  text-decoration: underline;
+}
+
+ol {
+  list-style-position: inside;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+legend {
+  padding-inline: 0.5rem;
+  font-weight: bold;
+}
+
+.page-maxw {
+  max-width: 70rem;
+  margin: auto;
+}
+
+.page-px {
+  padding-inline: 2rem;
+}
+
+.section-my {
+  margin-block: 4rem;
+}
+
+.button {
+  box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
+  border: 0.2rem solid;
+  border-radius: 0.4rem;
+  padding: 1rem 2rem;
+  background-color: antiquewhite;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.button:hover {
+  background-color: wheat;
+}
+
+.button:active {
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  transform: translateY(0.35rem);
+}
+
+.input {
+  max-width: 20rem;
+  border: 0.2rem solid indigo;
+  border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(255, 245, 245);
+  font-size: 2.2rem;
+  font-weight: normal;
+}
+
+.input:focus {
+  background-color: white;
+}
+
+input[type="number"] {
+  max-width: 10rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 2rem;
+  background-color: indigo;
+  color: wheat;
+  border-bottom: 1rem solid wheat;
+}
+
+.collapsible-controller {
+  cursor: pointer;
+}
+
+.collapsible-controller > span {
+  font-size: 2.4rem;
+}
+
+.collapse {
+  display: none;
+}
+
+.player-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1.5fr;
+  gap: 1.5rem;
+}
+
+.player-form__control:nth-child(1) {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+.player-form__control:nth-child(2) {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+.player-form__control:nth-child(3) {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+.player-form__control:nth-child(4) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.player-form__button {
+  grid-column: 1 / 3;
+  width: 20rem;
+  margin: auto;
+  margin-top: 1.5rem;
+}
+
+.player-form__control > label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.game {
+  position: relative;
+}
+
+.backdrop {
+  position: absolute;
+  left: 0;
+  top: 5rem;
+  z-index: 2;
+  background-color: rgba(255, 245, 245, 0.7);
+  width: 100%;
+  height: 100%;
+}
+
+.game-records {
+  max-width: 45rem;
+  margin: auto;
+}
+
+.game-records > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-inline: 1rem;
+}
+
+.game-records > div:nth-child(1) {
+  transition: all 0.5s ease;
+}
+.game-records > div:nth-child(1) label {
+  padding-top: 0.5rem;
+}
+.game-records > div:nth-child(1) strong {
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+.game-records > div:nth-child(2) {
+  margin-bottom: 2rem;
+}
+
+.align-right {
+  text-align: right;
+}
+
+progress {
+  appearance: none;
+  max-width: 20rem;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+output {
+  color: brown;
+  text-decoration: underline;
+}
+
+.game-action {
+  text-align: center;
+  position: relative;
+}
+
+.game-action__msg {
+  margin-bottom: 2rem;
+}
+
+.game-action__msg__symbol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.game-action__msg__symbol > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
+  background-color: indigo;
+  color: wheat;
+  font-size: 3.2rem;
+}
+
+.game-action__msg__symbol::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  border: 0.4rem solid brown;
+}
+
+.game-action__msg__text {
+  font-size: 3.2rem;
+}
+
+.game-action__form > * {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+.game-action__form > label {
+  margin-bottom: 0.6rem;
+  color: brown;
+}
+
+.game-action__form > input {
+  padding: 1rem 2rem;
+  border-width: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.game-action__form > span {
+  margin-bottom: 2rem;
+  color: slategrey;
+  font-size: 2rem;
+}
+
+.game-action__form > button {
+  width: 100%;
+  font-size: 2.8rem;
+}

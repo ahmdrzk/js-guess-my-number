@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" />
+    <title>Guess My Number!</title>
+  </head>
+
+  <body>
+    <header class="header page-maxw page-px">
+      <h1>Guess My Number!🎲</h1>
+      <button type="button" id="start-over-button" class="button">
+        Start Over
+      </button>
+    </header>
+
+    <aside class="page-maxw section-my">
+      <article>
+        <h2 class="collapsible-controller page-px">
+          How to play the game? <span>🔼</span>
+        </h2>
+        <ol class="collapsible-content page-px">
+          <li>Guess and enter a number between the specified range (1 - 20)</li>
+          <li>You have 5 tries per round to enter the correct number</li>
+          <li>
+            If you entered the correct number, your total score will get
+            increased by that number
+          </li>
+          <li>
+            If you tried 5 times and failed to enter the correct number your
+            total score will get decreased by that number
+          </li>
+          <li>
+            You have 10 rounds in total and you need to make your score 60 or
+            above to win the game
+          </li>
+        </ol>
+      </article>
+    </aside>
+
+    <main class="page-maxw">
+      <section class="section-my">
+        <h2 class="page-px">Enter Player Details To Start The Game:</h2>
+        <form class="player-form page-px">
+          <div class="player-form__control">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" class="input" />
+          </div>
+          <div class="player-form__control">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" class="input" />
+          </div>
+          <div class="player-form__control">
+            <label for="location">Location</label>
+            <select id="location" class="input">
+              <option value="">Select A Location</option>
+              <option value="africa">Africa</option>
+              <option value="north-america">North America</option>
+              <option value="south-america">South America</option>
+              <option value="europe">Europe</option>
+              <option value="asia">Asia</option>
+              <option value="oceania">Oceania</option>
+              <option value="antarctica">Antarctica</option>
+            </select>
+          </div>
+          <fieldset id="gender-radio-group" class="player-form__control input">
+            <legend>Gender</legend>
+            <div>
+              <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="male"
+                class="input"
+              />
+              <label for="male">Male</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="female"
+                name="gender"
+                value="female"
+                class="input"
+              />
+              <label for="female">Female</label>
+            </div>
+          </fieldset>
+          <button
+            type="submit"
+            id="start-play-button"
+            class="button player-form__button"
+          >
+            <-- Play -->
+          </button>
+        </form>
+      </section>
+
+      <section class="game section-my">
+        <h2 class="page-px">Preparing The Game ...</h2>
+        <div class="backdrop"></div>
+        <section class="page-px">
+          <h3>Game Records</h3>
+          <div class="game-records">
+            <div>
+              <label for="score">Your Score</label>
+              <div>
+                <output for="guess-number" id="score"
+                  ><strong>0</strong></output
+                >
+                <span> &nbsp;📍</span>
+              </div>
+            </div>
+            <div>
+              <span>Target Score</span>
+              <span>60 🏆</span>
+            </div>
+            <div>
+              <label for="tries">Current Tries</label>
+              <div>
+                <output for="guess-number" id="tries">
+                  <strong>0</strong></output
+                ><span> (max. 5)</span>
+              </div>
+            </div>
+            <div>
+              <label for="rounds-progress">Round</label>
+              <div class="align-right">
+                <output for="guess-number" id="rounds">
+                  <strong>0</strong></output
+                ><span> (max. 10)</span>
+                <progress id="rounds-progress" value="0" max="20"></progress>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="game-action section-my page-px">
+          <div class="game-action__msg">
+            <div class="game-action__msg__symbol"><span>?</span></div>
+            <p class="game-action__msg__text"></p>
+          </div>
+          <form class="game-action__form">
+            <label for="guess-number">Your Guess</label>
+            <input
+              type="number"
+              id="guess-number"
+              name="guess-number"
+              min="1"
+              max="20"
+              class="input"
+              disabled
+            />
+            <span>(Between 1 and 20)</span>
+            <button
+              type="submit"
+              id="play-button"
+              name="play-button"
+              value="check"
+              class="button"
+              disabled
+            >
+              Check!
+            </button>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <script src="script-ui.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
